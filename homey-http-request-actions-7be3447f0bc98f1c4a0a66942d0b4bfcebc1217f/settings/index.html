@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+  <head>
+    <script type="text/javascript" src="/homey.js" data-origin="settings"></script>
+    <script type="text/javascript" src="/manager/webserver/assets/js/jquery.js"></script>
+    <script type="text/javascript" src="js/settings.js"></script>
+    <link rel="stylesheet" href="css/settings.css">
+   </style>
+  </head>
+  <body>
+    <h1 data-i18n="settings.title"></h1>
+    <div id="busy" class="busy"><i class="fa fa-cog fa-spin fa-2x fa-fw"></i><span>..</span></div>
+    <div id="error" class="error"><i class="fa fa-times-circle fa-2x fa-fw"></i><span>..</span></div>
+    <div id="success" class="success"><i class="fa fa-check fa-2x fa-fw"></i><span>..</span></div>
+    <fieldset>
+      <h2 data-i18n="settings.authorization.title">Authorization</h2>
+      <p data-i18n="settings.authorization.intro"></p>
+      <div>
+        <input id="apiAuthorization" type="checkbox" value="authorization" />
+        <label for="apiAuthorization" data-i18n="settings.authorization.fieldAuthorization"></label>
+      </div>
+      <br />
+      <h2 data-i18n="settings.whitelist.title">Whitelist</h2>
+      <p data-i18n="settings.whitelist.intro"></p>
+      <div>
+        <table id="whitelist" class="whitelist">
+          <tr>
+            <th class="entry" data-i18n="settings.whitelist.headerIp"></th>
+            <th class="entry"></th>
+          </tr>
+          <tr id="template" data="ip">
+            <td class="entry"><span class="code"></span></td>
+            <td class="entry"><button data="del_btn"><i class="fa fa-trash-o"></i></button></td>
+          </tr>
+          <tr id="newIpRow">
+            <td class="entry"><input type="text" id="newIp" class="code"></td>
+            <td class="entry"><button id="addIp"><i class="fa fa-plus"></i></button></td>
+          </tr>
+        </table>
+      </div>
+    </fieldset>
+  </body>
+</html>

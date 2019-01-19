@@ -1,0 +1,14 @@
+cmd
+athom login
+cd C:\Users\tony\Documents\GitHub\Homey\au.com.websiteadvantage.aeotec
+cd C:\Users\tony\Documents\GitHub\Homey\au.com.websiteadvantage.visionsecurity
+athom app run
+
+athom app install
+
+
+
+
+#
+https://developer.athom.com/
+

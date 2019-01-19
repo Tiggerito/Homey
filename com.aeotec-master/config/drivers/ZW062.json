@@ -1,0 +1,326 @@
+{
+	"id": "ZW062",
+	"name": {
+		"en": "Garage Door Controller Gen5"
+	},
+	"zwave": {
+		"manufacturerId": 134,
+		"productTypeId": [3, 515],
+		"productId": 62,
+		"requireSecure": true,
+		"learnmode": {
+			"instruction": {
+				"en": "Press the (z-wave) button on your Garage Door Controller",
+				"nl": "Druk op de (z-wave) knop op de Garage Door Controller"
+			}
+		},
+		"associationGroups": [
+			1,
+			2
+		],
+		"defaultConfiguration": [
+			{
+				"id": 32,
+				"value": 0,
+				"size": 1
+			},
+			{
+				"id": 80,
+				"value": 2,
+				"size": 1
+			}
+		]
+	},
+	"class": "lock",
+	"capabilities": [
+		"locked"
+	],
+	"images": {
+		"large": "/drivers/ZW062/assets/images/large.jpg",
+		"small": "/drivers/ZW062/assets/images/small.jpg"
+	},
+	"settings": [
+		{
+			"id": 32,
+			"type": "checkbox",
+			"label": {
+				"en": "Enable the start-up ringtone",
+				"nl": "Laat ringtone horen bij opstarten"
+			},
+			"value": false
+		},
+		{
+			"id": 34,
+			"type": "checkbox",
+			"label": {
+				"en": "Send calibration command on save",
+				"nl": "Stuur kalibratie commando bij het opslaan"
+			},
+			"hint": {
+				"en": "Calibration procedure: 1. Let the garage door move to full close position. 2. Enable this parameter, and save the settings. 3. Disable this parameter again and save, then let the garage door move to full open position. 4. Let the garage door move to full close position after step 3 is completed.",
+				"nl": "Kalibratie process: 1. Laat de garagedeur naar de volledig gesloten positie gaan. 2. Vink deze parameter aan en sla de instellingen op. 3. Vink deze parameter uit en sla de instellingen opnieuw op, laat vervolgens de garagedeur naar de volledig geopende positie gaan. 4. Laat de garagedeur naar de volledig gesloten positie gaan nadat stap 3 is voltooid."
+			},
+			"value": false
+		},
+		{
+			"type": "group",
+			"label": {
+				"en": "Alarm mode - opening",
+				"nl": "Alarm modus - openen"
+			},
+			"children": [
+				{
+					"id": 371,
+					"type": "number",
+					"label": {
+						"en": "LED blink frequency",
+						"nl": "LED knipper snelheid"
+					},
+					"value": 10,
+					"attr": {
+						"min": 1,
+						"max": 10
+					}
+				},
+				{
+					"id": 372,
+					"type": "number",
+					"label": {
+						"en": "Sound number",
+						"nl": "Geluid nummer"
+					},
+					"value": 1,
+					"attr": {
+						"min": 1
+					}
+				},
+				{
+					"id": 373,
+					"type": "number",
+					"label": {
+						"en": "Sound volume",
+						"nl": "Volume"
+					},
+					"value": 8,
+					"attr": {
+						"min": 1,
+						"max": 10
+					}
+				},
+				{
+					"id": 374,
+					"type": "checkbox",
+					"label": {
+						"en": "Alarm enabled",
+						"nl": "Alarm aan"
+					},
+					"value": true
+				}
+			]
+		},
+		{
+			"type": "group",
+			"label": {
+				"en": "Alarm mode - closing",
+				"nl": "Alarm modus - sluiten"
+			},
+			"children": [
+				{
+					"id": 381,
+					"type": "number",
+					"label": {
+						"en": "LED blink frequency",
+						"nl": "LED knipper snelheid"
+					},
+					"value": 6,
+					"attr": {
+						"min": 1,
+						"max": 10
+					}
+				},
+				{
+					"id": 382,
+					"type": "number",
+					"label": {
+						"en": "Sound number",
+						"nl": "Geluid nummer"
+					},
+					"value": 2,
+					"attr": {
+						"min": 1
+					}
+				},
+				{
+					"id": 383,
+					"type": "number",
+					"label": {
+						"en": "Sound volume",
+						"nl": "Volume"
+					},
+					"value": 8,
+					"attr": {
+						"min": 1,
+						"max": 10
+					}
+				},
+				{
+					"id": 384,
+					"type": "checkbox",
+					"label": {
+						"en": "Alarm enabled",
+						"nl": "Alarm aan"
+					},
+					"value": true
+				}
+			]
+		},
+		{
+			"type": "group",
+			"label": {
+				"en": "Alarm mode - unknown",
+				"nl": "Alarm modus - onbekend"
+			},
+			"children": [
+				{
+					"id": 391,
+					"type": "number",
+					"label": {
+						"en": "LED blink frequency",
+						"nl": "LED knipper snelheid"
+					},
+					"value": 4,
+					"attr": {
+						"min": 1,
+						"max": 10
+					}
+				},
+				{
+					"id": 392,
+					"type": "number",
+					"label": {
+						"en": "Sound number",
+						"nl": "Geluid nummer"
+					},
+					"value": 3,
+					"attr": {
+						"min": 1
+					}
+				},
+				{
+					"id": 393,
+					"type": "number",
+					"label": {
+						"en": "Sound volume",
+						"nl": "Volume"
+					},
+					"value": 8,
+					"attr": {
+						"min": 1,
+						"max": 10
+					}
+				},
+				{
+					"id": 394,
+					"type": "checkbox",
+					"label": {
+						"en": "Alarm enabled",
+						"nl": "Alarm aan"
+					},
+					"value": false
+				}
+			]
+		},
+		{
+			"type": "group",
+			"label": {
+				"en": "Alarm mode - closed",
+				"nl": "Alarm modus - gesloten"
+			},
+			"children": [
+				{
+					"id": 401,
+					"type": "number",
+					"label": {
+						"en": "LED blink frequency",
+						"nl": "LED knipper snelheid"
+					},
+					"value": 2,
+					"attr": {
+						"min": 1,
+						"max": 10
+					}
+				},
+				{
+					"id": 402,
+					"type": "number",
+					"label": {
+						"en": "Sound number",
+						"nl": "Geluid nummer"
+					},
+					"value": 4,
+					"attr": {
+						"min": 1
+					}
+				},
+				{
+					"id": 403,
+					"type": "number",
+					"label": {
+						"en": "Sound volume",
+						"nl": "Volume"
+					},
+					"value": 8,
+					"attr": {
+						"min": 1,
+						"max": 10
+					}
+				},
+				{
+					"id": 404,
+					"type": "checkbox",
+					"label": {
+						"en": "Alarm enabled",
+						"nl": "Alarm aan"
+					},
+					"value": false
+				}
+			]
+		},
+		{
+			"id": 80,
+			"type": "dropdown",
+			"label": {
+				"en": "Send following report when garage door state is changed",
+				"nl": "Stuur het volgende report wanneer garagedeur status veranderd"
+			},
+			"value": "2",
+			"values": [
+				{
+					"id": "1",
+					"label": {
+						"en": "Hail CC"
+					}
+				},
+				{
+					"id": "2",
+					"label": {
+						"en": "Barrier operator CC"
+					}
+				}
+			]
+		},
+		{
+			"id": 241,
+			"type": "checkbox",
+			"label": {
+				"en": "Send sensor pairing command on save",
+				"nl": "Stuur sensor koppel commando bij het opslaan"
+			},
+			"hint": {
+				"en": "Check this checkbox, save the settings, and click the tamper switch on the back of the sensor once to pair. Afterwards disable the checkbox again and save. Sensor is paired when network LED on the controller has stopped blinking.",
+				"nl": "Vink deze checkbox aan en sla de instellingen op. Klik dan op het wieltje achterop de sensor om te pairen. Na de tijd vink deze checkbox uit en sla de instellingen opnieuw op. Sensor is gepaired wanneer netwerk LED op de controller is gestopt met knipperen."
+			},
+			"value": false
+		}
+	]
+}

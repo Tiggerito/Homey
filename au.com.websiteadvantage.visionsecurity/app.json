@@ -1,0 +1,77 @@
+{
+    "id": "au.com.websiteadvantage.visionsecurity",
+    "version": "1.0.0",
+    "compatibility": ">=1.5.0",
+    "category": "appliances",
+    "sdk": 2,
+    "permissions": [],
+    "images": {
+        "large": "/assets/images/large.png",
+        "small": "/assets/images/small.png"
+    },
+    "name": {
+        "en": "Vision Security by Tony"
+    },
+    "description": {
+        "en": "Vision Security devices by Tony"
+    },
+    "author": {
+        "name": "Anthony McCreath",
+        "email": "tony@websiteadvantage.com.au"
+    },
+    "flow": {
+        "triggers": [          
+            {
+                "id": "VisionFob_scene",
+                "title": {
+                    "en": "Scene activated",
+                    "nl": "Scene is geactiveerd"
+                },
+                "hint": {
+                    "en": "This card will trigger on any button pressed in Central Scene mode (2+4 till green light)"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=VisionFob"
+                    }
+                ],
+                "tokens": [
+                    {
+                        "name": "scene",
+                        "type": "string",
+                        "title": {
+                            "en": "scene",
+                            "nl": "scene"
+                        },
+                        "example": "0"
+                    }
+                ]
+            }
+        ]
+    },
+    "drivers": [
+        {
+            "id": "VisionFob",
+            "name": {
+                "en": "Vision Fob",
+                "nl": "Vision Fob"
+            },
+            "class": "sensor",
+            "capabilities": ["measure_battery"],
+            "wakeUpInterval": 300,
+            "learnmode": {
+                "instruction": {
+                    "en": "Press button 1 and 4 till the red LED flashes."
+                }
+            },
+            "zwave": {
+                "manufacturerId": 265,
+                "productTypeId": [4098],
+                "productId": 514,
+                "associationGroups": [1,2,3,4,5]
+            }
+        }
+    ]
+}

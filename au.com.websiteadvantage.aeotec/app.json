@@ -1,0 +1,151 @@
+{
+    "id": "au.com.websiteadvantage.aeotec",
+    "version": "1.0.0",
+    "compatibility": ">=1.5.0",
+    "category": "appliances",
+    "sdk": 2,
+    "permissions": [],
+    "images": {
+        "large": "/assets/images/large.png",
+        "small": "/assets/images/small.png"
+    },
+    "name": {
+        "en": "Aeotec by Tony"
+    },
+    "description": {
+        "en": "Aeotec devices by Tony"
+    },
+    "author": {
+        "name": "Anthony McCreath",
+        "email": "tony@websiteadvantage.com.au"
+    },
+    "flow": {
+        "triggers": [ 
+            {
+                "id": "Minimote_button",
+                "title": {
+                    "en": "A button has been pressed",
+                    "nl": "Een knop is ingedrukt"
+                },
+                "hint": {
+                    "en": "This card will only get triggered if the button and method match the state of the dropdown fields.",
+                    "nl": "Deze kaart wordt alleen geactiveerd wanneer de knop en method overeenkomen met de toestand van de gekozen opties."
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=Minimote"
+                    },
+                    {
+                        "name": "button",
+                        "type": "dropdown",
+                        "values": [
+                            {
+                                "id": "1",
+                                "label": {
+                                    "en": "Top Left",
+                                    "nl": "Knop 1"
+                                }
+                            },
+                            {
+                                "id": "2",
+                                "label": {
+                                    "en": "Top Right",
+                                    "nl": "Knop 2"
+                                }
+                            },
+                            {
+                                "id": "3",
+                                "label": {
+                                    "en": "Bottom Left",
+                                    "nl": "Knop 3"
+                                }
+                            },
+                            {
+                                "id": "4",
+                                "label": {
+                                    "en": "Bottom Right",
+                                    "nl": "Knop 4"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "name": "method",
+                        "type": "dropdown",
+                        "values": [
+                            {
+                                "id": "Key Pressed",
+                                "label": {
+                                    "en": "Pressed",
+                                    "nl": "ingedrukt"
+                                }
+                            },
+                            {
+                                "id": "Key Held Down",
+                                "label": {
+                                    "en": "Held Down",
+                                    "nl": "Lang ingedrukt"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },          
+            {
+                "id": "Minimote_scene",
+                "title": {
+                    "en": "Scene activated",
+                    "nl": "Scene is geactiveerd"
+                },
+                "hint": {
+                    "en": "This card will trigger on any button pressed and provides the scene value. 1-8 where 2 = long press on button 1"
+                },
+                "args": [
+                    {
+                        "name": "device",
+                        "type": "device",
+                        "filter": "driver_id=Minimote"
+                    }
+                ],
+                "tokens": [
+                    {
+                        "name": "scene",
+                        "type": "string",
+                        "title": {
+                            "en": "scene",
+                            "nl": "scene"
+                        },
+                        "example": "0"
+                    }
+                ]
+            }
+        ]
+    },
+    "drivers": [
+        {
+            "id": "Minimote",
+            "name": {
+                "en": "Minimote",
+                "nl": "Minimote"
+            },
+            "class": "sensor",
+            "capabilities": [],
+            "wakeUpInterval": 300,
+            "learnmode": {
+                "instruction": {
+                    "en": "Press the Learn button on your Key Fob. After pairing, press Learn and Mode for 3 seconds, to change the keyfob to User Mode.",
+                    "nl": "Druk op de Learn knop op de Key Fob. Na het toevoegen, houd de Learn en Mode voor 3 seconden ingedrukt, om de sleutelhanger in Gebruiker Modus te zetten."
+                }
+            },
+            "zwave": {
+                "manufacturerId": 134,
+                "productTypeId": [1],
+                "productId": 3,
+                "pid": 1584,
+                "associationGroups": [1]
+            }
+        }
+    ]
+}

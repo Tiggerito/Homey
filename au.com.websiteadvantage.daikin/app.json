@@ -1,0 +1,16 @@
+{
+    "id": "au.com.websiteadvantage.daikin",
+    "version": "1.0.0",
+    "compatibility": "0.x || 1.x",
+    "category": "internet",
+    "name": {
+        "en": "Daikin"
+    },
+    "description": {
+        "en": "Daikin Airconditionar"
+    },
+    "author": {
+        "name": "Anthony McCreath",
+        "email": "tony@websiteadvantage.com.au"
+    }
+}
