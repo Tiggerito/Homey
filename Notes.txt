@@ -12,3 +12,5 @@ athom app install
 #
 https://developer.athom.com/
 
+Check Personal Chrome for Homey Dev folder
+
