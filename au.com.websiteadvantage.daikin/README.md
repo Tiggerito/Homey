@@ -1,3 +1,3 @@
-### Sample Homey App
+Works with Daikins using SkyFi
 
-This is a demo app. It says hi back :-)
+After adding the device you need to go into advanced settings and set the IP Address and password for your Daikin

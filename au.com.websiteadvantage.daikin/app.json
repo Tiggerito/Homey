@@ -1,16 +1,438 @@
 {
-    "id": "au.com.websiteadvantage.daikin",
-    "version": "1.0.0",
-    "compatibility": "0.x || 1.x",
-    "category": "internet",
-    "name": {
-        "en": "Daikin"
+  "id": "au.com.websiteadvantage.daikinskifi",
+  "sdk": 2,
+  "version": "1.0.0",
+  "compatibility": ">=2.0.0",
+  "name": {
+    "en": "Daikin SkyFi"
+  },
+  "category": [
+    "climate",
+    "appliances"
+  ],
+  "description": {
+    "en": "Daikin Airconditionar with a SkyFi connection"
+  },
+  "author": {
+    "name": "Anthony McCreath",
+    "email": "tony@websiteadvantage.com.au"
+  },
+  "capabilities": {
+    "my_thermostat_mode": {
+      "type": "enum",
+      "title": {
+        "en": "Thermostat mode",
+        "nl": "Thermostaat modus",
+        "de": "Thermostat-Modus"
+      },
+      "desc": {
+        "en": "Mode of the thermostat",
+        "nl": "Modus van de thermostaat",
+        "de": "Modus des Thermostates"
+      },
+      "values": [
+        {
+          "id": "auto",
+          "title": {
+            "en": "Automatic",
+            "nl": "Automatisch",
+            "de": "Automatisch"
+          }
+        },
+        {
+          "id": "heat",
+          "title": {
+            "en": "Heat",
+            "nl": "Verhitten",
+            "de": "Heizen"
+          }
+        },
+        {
+          "id": "dry",
+          "title": {
+            "en": "Dry"
+          }
+        },
+        {
+          "id": "cool",
+          "title": {
+            "en": "Cool",
+            "nl": "Koelen",
+            "de": "Kühlen"
+          }
+        },
+        {
+          "id": "fan",
+          "title": {
+            "en": "Fan"
+          }
+        }
+      ],
+      "getable": true,
+      "setable": true,
+      "uiComponent": "picker",
+      "$flow": {
+        "triggers": [
+          {
+            "id": "thermostat_mode_changed",
+            "title": {
+              "en": "Thermostat mode has changed",
+              "nl": "Thermostaat modus is veranderd",
+              "de": "Thermostat-Modus hat sich geändert"
+            },
+            "args": [
+              {
+                "name": "thermostat_mode",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "auto",
+                    "title": {
+                      "en": "Automatic",
+                      "nl": "Automatisch",
+                      "de": "Automatisch"
+                    }
+                  },
+                  {
+                    "id": "heat",
+                    "title": {
+                      "en": "Heat",
+                      "nl": "Verhitten",
+                      "de": "Heizen"
+                    }
+                  },
+                  {
+                    "id": "dry",
+                    "title": {
+                      "en": "Dry"
+                    }
+                  },
+                  {
+                    "id": "cool",
+                    "title": {
+                      "en": "Cool",
+                      "nl": "Koelen",
+                      "de": "Kühlen"
+                    }
+                  },
+                  {
+                    "id": "fan",
+                    "title": {
+                      "en": "Fan"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "conditions": [
+          {
+            "id": "thermostat_mode_is",
+            "title": {
+              "en": "Thermostat mode is",
+              "nl": "Thermostaat modus is",
+              "de": "Thermostat-Modus ist"
+            },
+            "args": [
+              {
+                "name": "thermostat_mode",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "auto",
+                    "title": {
+                      "en": "Automatic",
+                      "nl": "Automatisch",
+                      "de": "Automatisch"
+                    }
+                  },
+                  {
+                    "id": "heat",
+                    "title": {
+                      "en": "Heat",
+                      "nl": "Verhitten",
+                      "de": "Heizen"
+                    }
+                  },
+                  {
+                    "id": "dry",
+                    "title": {
+                      "en": "Dry"
+                    }
+                  },
+                  {
+                    "id": "cool",
+                    "title": {
+                      "en": "Cool",
+                      "nl": "Koelen",
+                      "de": "Kühlen"
+                    }
+                  },
+                  {
+                    "id": "fan",
+                    "title": {
+                      "en": "Fan"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "actions": [
+          {
+            "id": "thermostat_mode_set",
+            "title": {
+              "en": "Set the mode",
+              "nl": "Stel de modus in",
+              "de": "Modus setzen"
+            },
+            "args": [
+              {
+                "name": "thermostat_mode",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "auto",
+                    "title": {
+                      "en": "Automatic",
+                      "nl": "Automatisch",
+                      "de": "Automatisch"
+                    }
+                  },
+                  {
+                    "id": "heat",
+                    "title": {
+                      "en": "Heat",
+                      "nl": "Verhitten",
+                      "de": "Heizen"
+                    }
+                  },
+                  {
+                    "id": "dry",
+                    "title": {
+                      "en": "Dry"
+                    }
+                  },
+                  {
+                    "id": "cool",
+                    "title": {
+                      "en": "Cool",
+                      "nl": "Koelen",
+                      "de": "Kühlen"
+                    }
+                  },
+                  {
+                    "id": "fan",
+                    "title": {
+                      "en": "Fan"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
     },
-    "description": {
-        "en": "Daikin Airconditionar"
-    },
-    "author": {
-        "name": "Anthony McCreath",
-        "email": "tony@websiteadvantage.com.au"
+    "my_fan_speed": {
+      "type": "enum",
+      "title": {
+        "en": "Fan Speed"
+      },
+      "desc": {
+        "en": "Fan speed"
+      },
+      "values": [
+        {
+          "id": "high",
+          "title": {
+            "en": "High"
+          }
+        },
+        {
+          "id": "medium",
+          "title": {
+            "en": "Medium"
+          }
+        },
+        {
+          "id": "low",
+          "title": {
+            "en": "Low"
+          }
+        }
+      ],
+      "getable": true,
+      "setable": true,
+      "uiComponent": "picker",
+      "$flow": {
+        "triggers": [
+          {
+            "id": "fan_speed_changed",
+            "title": {
+              "en": "Fan speed has changed"
+            },
+            "args": [
+              {
+                "name": "fan_speed",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "high",
+                    "title": {
+                      "en": "High"
+                    }
+                  },
+                  {
+                    "id": "medium",
+                    "title": {
+                      "en": "Medium"
+                    }
+                  },
+                  {
+                    "id": "low",
+                    "title": {
+                      "en": "Low"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "conditions": [
+          {
+            "id": "fan_speed_is",
+            "title": {
+              "en": "Fan speed is"
+            },
+            "args": [
+              {
+                "name": "fan_speed",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "high",
+                    "title": {
+                      "en": "High"
+                    }
+                  },
+                  {
+                    "id": "medium",
+                    "title": {
+                      "en": "Medium"
+                    }
+                  },
+                  {
+                    "id": "low",
+                    "title": {
+                      "en": "Low"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "actions": [
+          {
+            "id": "fan_speed_set",
+            "title": {
+              "en": "Set the fan speed"
+            },
+            "args": [
+              {
+                "name": "fan_speed",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "high",
+                    "title": {
+                      "en": "High"
+                    }
+                  },
+                  {
+                    "id": "medium",
+                    "title": {
+                      "en": "Medium"
+                    }
+                  },
+                  {
+                    "id": "low",
+                    "title": {
+                      "en": "Low"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
     }
+  },
+  "drivers": [
+    {
+      "id": "DaikinSkyFi",
+      "class": "thermostat",
+      "capabilities": [
+        "onoff",
+        "target_temperature",
+        "measure_temperature.inside",
+        "measure_temperature.outside",
+        "my_thermostat_mode",
+        "my_fan_speed"
+      ],
+      "name": {
+        "en": "Daikin"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "General settings"
+          },
+          "children": [
+            {
+              "id": "ip",
+              "type": "text",
+              "label": {
+                "en": "IP Address"
+              },
+              "value": "192.168.X.X",
+              "hint": {
+                "en": "You should be able to find the IP address for your Daikin via your router."
+              }
+            },
+            {
+              "id": "password",
+              "type": "text",
+              "label": {
+                "en": "Password"
+              },
+              "value": "",
+              "hint": {
+                "en": "The person who set up your Daikin should have provided you with a password."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }
