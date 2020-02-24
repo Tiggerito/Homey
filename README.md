@@ -1,17 +1,23 @@
 ```
+
+// developer notes
+
+// to install things... https://apps.developer.athom.com/tutorial-Getting%20Started.html
+
 cmd
 
-https://www.npmjs.com/package/athom-cli
-$ npm install -g athom-cli
+$ homey login
+// cd to the app folder. e.g. C:\Users\tony\Documents\GitHub\Homey\au.com.websiteadvantage.aeotec
 
-$ athom login
-cd to the app folder
-$ athom app run
-$ athom app install
+// to test. exit with ctrl c...
+$ homey app run
+
+// to intall...
+$ homey app install
 
 
 https://developer.athom.com/
-https://apps.developer.athom.com/tutorial-Getting%20Started.html
+
 
 referenced apps:
 https://github.com/athombv/com.aeotec

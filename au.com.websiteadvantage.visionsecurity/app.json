@@ -1,6 +1,6 @@
 {
     "id": "au.com.websiteadvantage.visionsecurity",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "compatibility": ">=1.5.0",
     "category": "appliances",
     "sdk": 2,
@@ -19,6 +19,26 @@
         "name": "Anthony McCreath",
         "email": "tony@websiteadvantage.com.au"
     },
+    "contributors":{  
+        "developers":[  
+           {  
+              "name":"Patrick van der Westen",
+              "email":"pvdwesten@hotmail.com"
+           },
+           {  
+              "name":"Serge Regoor",
+              "email":"serge@regoor.nl"
+           },
+           {  
+              "name":"Anne Baretta",
+              "email":"dev@baretta.nu"
+           },
+           {
+            "name": "Anthony McCreath",
+            "email": "tony@websiteadvantage.com.au"
+            }
+        ]
+     },
     "flow": {
         "triggers": [          
             {
@@ -69,9 +89,56 @@
             "zwave": {
                 "manufacturerId": 265,
                 "productTypeId": [4098],
-                "productId": 514,
+                "productId": [514],
                 "associationGroups": [1,2,3,4,5]
             }
-        }
+        },
+        {
+            "id": "ZD2201",
+            "name": {
+               "en": "Multisensor 4in1"
+            },
+            "zwave": {
+               "manufacturerId": 265,
+               "productTypeId": [8223],
+               "_comment": "ProdictIds in hex - https://github.com/OpenZWave/open-zwave/blob/master/config/manufacturer_specific.xml",
+               "productId": [7952],
+               "learnmode": {
+                    "image": "/drivers/ZD2102/assets/learnmode.svg",
+                    "instruction": {
+                        "en": "Press the button on your  Door/Window Sensor",
+                        "nl": "Druk op de knop op de Deur/Raam Sensor"
+                    }
+               },
+               "associationGroups": [
+                    1,2,3
+               ]
+            },
+            "class": "sensor",
+            "capabilities": [
+               "alarm_contact",
+               "alarm_tamper",
+               "measure_battery"
+            ],
+            "images": {
+               "large": "/drivers/ZD2102/assets/images/large.png",
+               "small": "/drivers/ZD2102/assets/images/small.png"
+            },
+            "settings": [
+               {
+               "id": "Enable_External_Switch",
+                  "type":"checkbox",
+               "label": {
+                  "en": "Turn on the external input",
+                  "nl": "Zet de externe ingang aan"
+               },
+               "hint": {
+                  "en": "Turn on the external input",
+                  "nl": "Zet de externe ingang aan"
+               },
+               "value": false
+               }
+            ]
+           }
     ]
 }
