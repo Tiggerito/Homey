@@ -1,0 +1,39 @@
+{
+  "id": "au.com.websiteadvantage.stripe",
+  "version": "1.0.0",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "brandColor": "#FF0000",
+  "name": {
+    "en": "Stripe"
+  },
+  "description": {
+    "en": "Stripe"
+  },
+  "category": [
+    "appliances"
+  ],
+  "permissions": ["homey:manager:api"],
+  "images": {
+    "large": "/assets/images/large.png",
+    "small": "/assets/images/small.png"
+  },
+  "flow": {
+    "triggers": [ 
+        {
+          "id": "stripe_invoice_payment_succeeded",
+          "title": {
+              "en": "Payment has been made"
+          },
+          "hint": {
+              "en": "Stripe sent a webhook indicating an invoice payment was made."
+          }
+        }
+    ]
+  },
+   
+  "author": {
+    "name": "Anthony McCreath",
+    "email": "tony@websiteadvantage.com.au"
+  }
+}
